@@ -1,0 +1,92 @@
+/* Reset default margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Container for the game canvas */
+#game-container {
+    position: relative;
+    width: 90vw;  /* The width will be 90% of the viewport width */
+    height: 90vh; /* The height will be 90% of the viewport height */
+    max-width: 1200px; /* Optional: Set a maximum width for the container */
+    max-height: 800px; /* Optional: Set a maximum height for the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Game canvas styling */
+canvas {
+    background-color: #111;
+    display: block;
+    border: 2px solid #fff;
+    width: 100%;  /* Canvas will scale to fit the container */
+    height: 100%; /* Canvas will scale to fit the container */
+}
+
+/* Styling for the control buttons container */
+#controls {
+    position: absolute;
+    bottom: 20px; /* Position the controls at the bottom of the screen */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    justify-content: space-between;
+    width: 250px; /* Width for button spacing */
+    z-index: 10; /* Ensure buttons are above the game content */
+}
+
+/* Individual control button styles */
+.control-btn {
+    font-size: 24px;
+    padding: 15px;
+    width: 50px; /* Fixed width for the buttons */
+    height: 50px; /* Fixed height for the buttons */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.control-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+/* Active effect for button click */
+.control-btn:active {
+    background-color: rgba(0, 0, 0, 1);
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+/* Additional styling for the shoot button (optional visual distinction) */
+#shootButton {
+    background-color: rgba(255, 0, 0, 0.7); /* Red background to highlight shoot button */
+    font-size: 22px; /* Slightly smaller font size */
+    color: #fff;
+    border-color: #ff3333; /* Red border to make the shoot button stand out */
+}
+
+#shootButton:hover {
+    background-color: rgba(255, 0, 0, 0.9); /* Darker red on hover */
+}
+
+#shootButton:active {
+    background-color: rgba(255, 0, 0, 1); /* Full red when clicked */
+}

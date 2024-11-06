@@ -45,7 +45,7 @@ canvas {
     transform: translateX(-50%); /* Center horizontally */
     display: flex;
     justify-content: space-between;
-    width: 250px; /* Width for button spacing */
+    width: 500px; /* Width for button spacing */
     z-index: 10; /* Ensure buttons are above the game content */
 }
 

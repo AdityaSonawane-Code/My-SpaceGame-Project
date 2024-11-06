@@ -40,8 +40,9 @@ let enemyInterval;
 let rightPressed = false;
 let leftPressed = false;
 let spacePressed = false;
+let touchStartX = 0;  // Variable to store touch start position
 
-// Event listeners for on-screen control buttons
+// Event listeners for on-screen control buttons (for mouse interaction)
 document.getElementById("leftButton").addEventListener("mousedown", () => {
   leftPressed = true;
 });
@@ -70,6 +71,35 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("keyup", (e) => {
   if (e.key === " ") spacePressed = false;
+});
+
+// Touch event listeners for mobile control
+canvas.addEventListener("touchstart", (e) => {
+  const touchX = e.touches[0].clientX;
+  touchStartX = touchX;
+  if (touchX < canvas.width / 2) {
+    leftPressed = true;
+    rightPressed = false;
+  } else {
+    rightPressed = true;
+    leftPressed = false;
+  }
+});
+
+canvas.addEventListener("touchend", () => {
+  leftPressed = false;
+  rightPressed = false;
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  const touchX = e.touches[0].clientX;
+  if (touchX < canvas.width / 2) {
+    leftPressed = true;
+    rightPressed = false;
+  } else {
+    rightPressed = true;
+    leftPressed = false;
+  }
 });
 
 // Bullet constructor

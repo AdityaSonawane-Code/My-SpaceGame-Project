@@ -20,7 +20,7 @@ body {
 #game-container {
     position: relative;
     width: 90vw;  /* The width will be 90% of the viewport width */
-    height: 90vh; /* The height will be 90% of the viewport height */
+    height: 80vh; /* The height will be 90% of the viewport height */
     max-width: 1200px; /* Optional: Set a maximum width for the container */
     max-height: 800px; /* Optional: Set a maximum height for the container */
     display: flex;
@@ -77,7 +77,7 @@ canvas {
 
 /* Additional styling for the shoot button (optional visual distinction) */
 #shootButton {
-    background-color: rgba(255, 0, 0, 0.7); /* Red background to highlight shoot button */
+    background-color: rgba(255, 0, 230, 0.7); /* Red background to highlight shoot button */
     font-size: 22px; /* Slightly smaller font size */
     color: #fff;
     border-color: #ff3333; /* Red border to make the shoot button stand out */
